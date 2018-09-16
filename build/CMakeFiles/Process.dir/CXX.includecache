@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.cpp
+process.h
+/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.h
+
+/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.h
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+
