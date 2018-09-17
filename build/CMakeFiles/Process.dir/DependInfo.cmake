@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.cpp" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build/CMakeFiles/Process.dir/process.cpp.o"
+  "/home/geraldo/Documents/SO1-escalonadores/process.cpp" "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir/process.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

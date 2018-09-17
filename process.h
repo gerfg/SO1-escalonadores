@@ -15,6 +15,9 @@ public:
 
         static int idCounter;
 
+        // FCFS
+        int startExecution;
+
         Process(int chegada, int execucao);
         ~Process();
 

@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/geraldo/Documents/SO1-escalonadores/process.cpp
+/home/geraldo/Documents/SO1-escalonadores/fcfs.cpp
+fcfs.h
+/home/geraldo/Documents/SO1-escalonadores/fcfs.h
+
+/home/geraldo/Documents/SO1-escalonadores/fcfs.h
+vector
+-
+algorithm
+-
 process.h
 /home/geraldo/Documents/SO1-escalonadores/process.h
 

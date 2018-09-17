@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores"
+CMAKE_SOURCE_DIR = /home/geraldo/Documents/SO1-escalonadores
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build"
+CMAKE_BINARY_DIR = /home/geraldo/Documents/SO1-escalonadores/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Process.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Process.dir/flags.make
 
 CMakeFiles/Process.dir/process.cpp.o: CMakeFiles/Process.dir/flags.make
 CMakeFiles/Process.dir/process.cpp.o: ../process.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Process.dir/process.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Process.dir/process.cpp.o -c "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Process.dir/process.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Process.dir/process.cpp.o -c /home/geraldo/Documents/SO1-escalonadores/process.cpp
 
 CMakeFiles/Process.dir/process.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Process.dir/process.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.cpp" > CMakeFiles/Process.dir/process.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/geraldo/Documents/SO1-escalonadores/process.cpp > CMakeFiles/Process.dir/process.cpp.i
 
 CMakeFiles/Process.dir/process.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Process.dir/process.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/process.cpp" -o CMakeFiles/Process.dir/process.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/geraldo/Documents/SO1-escalonadores/process.cpp -o CMakeFiles/Process.dir/process.cpp.s
 
 CMakeFiles/Process.dir/process.cpp.o.requires:
 
@@ -91,7 +91,7 @@ Process_EXTERNAL_OBJECTS =
 libProcess.a: CMakeFiles/Process.dir/process.cpp.o
 libProcess.a: CMakeFiles/Process.dir/build.make
 libProcess.a: CMakeFiles/Process.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libProcess.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libProcess.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/Process.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Process.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/Process.dir/clean:
 .PHONY : CMakeFiles/Process.dir/clean
 
 CMakeFiles/Process.dir/depend:
-	cd "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build" "/storage/MegaSync/UFPB/Sistemas Operacionais I/Implementações/trabalho1-escalonadores/build/CMakeFiles/Process.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/geraldo/Documents/SO1-escalonadores/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/geraldo/Documents/SO1-escalonadores /home/geraldo/Documents/SO1-escalonadores /home/geraldo/Documents/SO1-escalonadores/build /home/geraldo/Documents/SO1-escalonadores/build /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Process.dir/depend
 
