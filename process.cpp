@@ -27,7 +27,6 @@ std::vector<Process> readInstance(std::string file) {
         fs >> chegada;
         fs >> execucao;
         if( fs.eof() ) break;
-        std::cout << chegada << " " << execucao << std::endl;
         prcs.push_back(Process(chegada,execucao));
     }
 
