@@ -193,6 +193,9 @@ escalonamento_BINARY_DIR:STATIC=/home/geraldo/Documents/SO1-escalonadores/build
 //Value Computed by CMake
 escalonamento_SOURCE_DIR:STATIC=/home/geraldo/Documents/SO1-escalonadores
 
+//Dependencies for target
+util_LIB_DEPENDS:STATIC=
+
 
 ########################
 # INTERNAL cache entries

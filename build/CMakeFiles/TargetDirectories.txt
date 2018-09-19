@@ -2,4 +2,5 @@
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/edit_cache.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/esc.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir
+/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir

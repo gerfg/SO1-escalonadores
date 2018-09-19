@@ -137,6 +137,19 @@ Process/fast:
 .PHONY : Process/fast
 
 #=============================================================================
+# Target rules for targets named util
+
+# Build rule for target.
+util: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 util
+.PHONY : util
+
+# fast build rule for target.
+util/fast:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
+.PHONY : util/fast
+
+#=============================================================================
 # Target rules for targets named FCFS
 
 # Build rule for target.
@@ -230,6 +243,33 @@ process.cpp.s:
 	$(MAKE) -f CMakeFiles/Process.dir/build.make CMakeFiles/Process.dir/process.cpp.s
 .PHONY : process.cpp.s
 
+util.o: util.cpp.o
+
+.PHONY : util.o
+
+# target to build an object file
+util.cpp.o:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/util.cpp.o
+.PHONY : util.cpp.o
+
+util.i: util.cpp.i
+
+.PHONY : util.i
+
+# target to preprocess a source file
+util.cpp.i:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/util.cpp.i
+.PHONY : util.cpp.i
+
+util.s: util.cpp.s
+
+.PHONY : util.s
+
+# target to generate assembly for a file
+util.cpp.s:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/util.cpp.s
+.PHONY : util.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,6 +280,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... esc"
 	@echo "... Process"
+	@echo "... util"
 	@echo "... FCFS"
 	@echo "... fcfs.o"
 	@echo "... fcfs.i"
@@ -250,6 +291,9 @@ help:
 	@echo "... process.o"
 	@echo "... process.i"
 	@echo "... process.s"
+	@echo "... util.o"
+	@echo "... util.i"
+	@echo "... util.s"
 .PHONY : help
 
 

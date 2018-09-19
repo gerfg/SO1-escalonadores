@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/geraldo/Documents/SO1-escalonadores/fcfs.h
-vector
--
-algorithm
--
-process.h
-/home/geraldo/Documents/SO1-escalonadores/process.h
-
-/home/geraldo/Documents/SO1-escalonadores/main.cpp
-process.h
-/home/geraldo/Documents/SO1-escalonadores/process.h
-fcfs.h
-/home/geraldo/Documents/SO1-escalonadores/fcfs.h
-util.h
-/home/geraldo/Documents/SO1-escalonadores/util.h
-
 /home/geraldo/Documents/SO1-escalonadores/process.h
 iostream
 -
@@ -31,6 +15,10 @@ vector
 -
 fstream
 -
+
+/home/geraldo/Documents/SO1-escalonadores/util.cpp
+util.h
+/home/geraldo/Documents/SO1-escalonadores/util.h
 
 /home/geraldo/Documents/SO1-escalonadores/util.h
 vector
