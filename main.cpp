@@ -1,5 +1,6 @@
 #include "process.h"
 #include "fcfs.h"
+#include "util.h"
 
 int main() {
     std::vector<Process> process;

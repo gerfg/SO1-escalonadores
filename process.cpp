@@ -23,23 +23,6 @@ std::string Process::printProcess(){
     return "Id: " + std::to_string(this->id) + " Chegada: " + std::to_string(this->tempoDeChegada) + " Execucao: " + std::to_string(this->tempoDeExecucao) + " StartExecution: " + std::to_string(this->startExecution);
 }
 
-
-std::vector<Process> readInstance(std::string file) {
-
-    std::vector<Process> prcs;
-
-    std::fstream read (file, std::fstream::in | std::fstream::out);
-
-    int chegada, execucao, count=0;
-
-    while(true){
-        read >> chegada;
-        read >> execucao;
-        if( read.eof() ) break;
-        prcs.push_back(Process(chegada,execucao));
-    }
-
-    read.close();    
-
-    return prcs;
+bool comparePrcs(Process x, Process y){
+    return x.tempoDeChegada < y.tempoDeChegada;
 }

@@ -9,7 +9,7 @@
 class Process {
 public:
         int tempoDeChegada, tempoDeExecucao;
-        const int id;
+        int id;
         
         float retorno, espera, reposta;
 
@@ -17,6 +17,7 @@ public:
 
         // FCFS
         int startExecution;
+        int endExecution;
 
         Process(int chegada, int execucao);
         ~Process();
@@ -25,6 +26,6 @@ public:
         std::string printProcess();
 };
 
-std::vector<Process> readInstance(std::string file);
+bool comparePrcs(Process x, Process y);
 
 #endif
