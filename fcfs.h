@@ -9,9 +9,14 @@ class FCFS {
 public:
     std::vector<Process> executionList;
 
+    float retornoMedio, respostaMedia, esperaMedia;
+
     FCFS(std::vector<Process> processList);
+    void calcTimes();
+
+    void printExitFCFS();
 };
 
-bool compareProcessFCFS(Process const & p1, Process const & p2);
+bool compareProcessFCFS(Process p1, Process p2);
 
 #endif
