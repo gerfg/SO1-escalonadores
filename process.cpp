@@ -8,10 +8,10 @@ tempoDeExecucao{execucao},
 id{idCounter++}, 
 retorno{0}, 
 espera{0}, 
-resposta{0}
-{
-    startExecution = 0;
-}
+resposta{0},
+startExecution{0},
+endExecution{0}
+{}
 
 Process::~Process(){}
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSJF.a  CMakeFiles/SJF.dir/sjf.cpp.o
+/usr/bin/ranlib libSJF.a

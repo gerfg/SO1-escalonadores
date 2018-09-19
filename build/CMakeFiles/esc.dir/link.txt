@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/esc.dir/main.cpp.o  -o esc libProcess.a libFCFS.a libutil.a 
+/usr/bin/c++      CMakeFiles/esc.dir/main.cpp.o  -o esc -rdynamic libProcess.a libFCFS.a libSJF.a libutil.a 

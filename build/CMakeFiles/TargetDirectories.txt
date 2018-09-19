@@ -1,6 +1,7 @@
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/rebuild_cache.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/edit_cache.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/esc.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/edit_cache.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/rebuild_cache.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/esc.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir
+/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/SJF.dir

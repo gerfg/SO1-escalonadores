@@ -8,8 +8,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(Process process.h process.cpp)
 add_library(FCFS fcfs.h fcfs.cpp)
+add_library(SJF sjf.h sjf.cpp)
 add_library(util util.h util.cpp)
 
 add_executable(esc main.cpp)
 
-target_link_libraries(esc Process FCFS util)
+target_link_libraries(esc Process FCFS SJF util)

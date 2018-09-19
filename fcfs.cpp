@@ -5,8 +5,8 @@ FCFS::FCFS(std::vector<Process> processList){
     retornoMedio = 0;
     esperaMedia = 0;
 
-    std::sort(processList.begin(), processList.end(), compareProcessFCFS);
     executionList = processList;
+    std::sort(executionList.begin(), executionList.end(), compareProcessFCFS);
     
     executionList[0].startExecution = 0;
     executionList[0].endExecution = executionList[0].tempoDeExecucao;

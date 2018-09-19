@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gfigueiredo/Documents/SO1-escalonadores/process.h
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+
+/home/gfigueiredo/Documents/SO1-escalonadores/sjf.cpp
+sjf.h
+/home/gfigueiredo/Documents/SO1-escalonadores/sjf.h
+
+/home/gfigueiredo/Documents/SO1-escalonadores/sjf.h
+process.h
+/home/gfigueiredo/Documents/SO1-escalonadores/process.h
+algorithm
+-
+
