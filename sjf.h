@@ -13,9 +13,11 @@ public:
     SJF(std::vector<Process> processList);
     void calcTimes();
 
-    void printExitFCFS();
+    void printExitSJF();
 };
 
 bool compareProcessSJF(Process p1, Process p2);
+bool compareProcessArrivedList(Process p1, Process p2);
+void showProcessList(std::vector<Process> prc, std::string name);
 
 #endif

@@ -13,11 +13,13 @@ int main(int argc, char const *argv[]) {
         std::vector<Process> process;
         process = readInstance(argv[1]);
         
-        FCFS fcfs(process);
-        fcfs.calcTimes();
-        fcfs.printExitFCFS();
+        // FCFS fcfs(process);
+        // fcfs.calcTimes();
+        // fcfs.printExitFCFS();
 
         SJF sjf(process);
+        sjf.calcTimes();
+        sjf.printExitSJF();
     }
     
     

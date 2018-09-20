@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/gfigueiredo/Documents/SO1-escalonadores/process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
 iostream
 -
 string
@@ -16,13 +16,13 @@ vector
 fstream
 -
 
-/home/gfigueiredo/Documents/SO1-escalonadores/sjf.cpp
+/home/geraldo/Documents/SO1-escalonadores/sjf.cpp
 sjf.h
-/home/gfigueiredo/Documents/SO1-escalonadores/sjf.h
+/home/geraldo/Documents/SO1-escalonadores/sjf.h
 
-/home/gfigueiredo/Documents/SO1-escalonadores/sjf.h
+/home/geraldo/Documents/SO1-escalonadores/sjf.h
 process.h
-/home/gfigueiredo/Documents/SO1-escalonadores/process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
 algorithm
 -
 

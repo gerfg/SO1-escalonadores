@@ -1,6 +1,6 @@
 #include "process.h"
 
-int Process::idCounter = 0;
+int Process::idCounter = 1;
 
 Process::Process(int chegada, int execucao) : 
 tempoDeChegada{chegada}, 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gfigueiredo/Documents/SO1-escalonadores/fcfs.cpp" "/home/gfigueiredo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir/fcfs.cpp.o"
+  "/home/geraldo/Documents/SO1-escalonadores/fcfs.cpp" "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir/fcfs.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

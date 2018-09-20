@@ -4,14 +4,21 @@ FCFS::FCFS(std::vector<Process> processList){
     respostaMedia = 0;
     retornoMedio = 0;
     esperaMedia = 0;
+    
+    std::sort(processList.begin(), processList.end(), compareProcessFCFS);
+    
+    executionList.push_back(processList[0]);
+    processList.erase(processList.begin());
+    
+    executionList[0].startExecution = executionList[0].tempoDeChegada;
+    executionList[0].endExecution = executionList[0].tempoDeChegada + executionList[0].tempoDeExecucao;
 
-    executionList = processList;
-    std::sort(executionList.begin(), executionList.end(), compareProcessFCFS);
-    
-    executionList[0].startExecution = 0;
-    executionList[0].endExecution = executionList[0].tempoDeExecucao;
-    
-    for(int i = 1; i < executionList.size(); i++) {
+    int i;
+    while(processList.size() != 0){
+        executionList.push_back(processList[0]);
+        processList.erase(processList.begin());
+        
+        i = executionList.size()-1;
         if (executionList[i-1].endExecution < executionList[i].tempoDeChegada) {
             executionList[i].startExecution = executionList[i].tempoDeChegada;
             executionList[i].endExecution = executionList[i].startExecution + executionList[i].tempoDeExecucao;
@@ -20,7 +27,14 @@ FCFS::FCFS(std::vector<Process> processList){
             executionList[i].endExecution = executionList[i].startExecution+executionList[i].tempoDeExecucao;
         }
     }
+    
+    // std::cout << "Process List" << std::endl;
+    // for(int i = 0; i < processList.size(); i++) {
+    //     std::cout << processList[i].printProcess() << '\n';
+    // }
+    // std::cout << std::endl;
 
+    std::cout << "Execution List" << std::endl;
     for(int i = 0; i < executionList.size(); i++) {
         std::cout << executionList[i].printProcess() << '\n';
     }
