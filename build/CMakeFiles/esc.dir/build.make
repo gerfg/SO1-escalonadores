@@ -93,6 +93,7 @@ esc: CMakeFiles/esc.dir/build.make
 esc: libProcess.a
 esc: libFCFS.a
 esc: libSJF.a
+esc: libRR.a
 esc: libutil.a
 esc: CMakeFiles/esc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable esc"

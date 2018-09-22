@@ -13,6 +13,8 @@ startExecution{0},
 endExecution{0}
 {}
 
+Process::Process(){}
+
 Process::~Process(){}
 
 std::string Process::printInfos() {

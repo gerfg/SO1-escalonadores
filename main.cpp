@@ -1,6 +1,7 @@
 #include "process.h"
 #include "fcfs.h"
 #include "sjf.h"
+#include "rr.h"
 #include "util.h"
 
 int main(int argc, char const *argv[]) {
@@ -17,9 +18,11 @@ int main(int argc, char const *argv[]) {
         // fcfs.calcTimes();
         // fcfs.printExitFCFS();
 
-        SJF sjf(process);
-        sjf.calcTimes();
-        sjf.printExitSJF();
+        // SJF sjf(process);
+        // sjf.calcTimes();
+        // sjf.printExitSJF();
+
+        RR rr(process, 2);
     }
     
     

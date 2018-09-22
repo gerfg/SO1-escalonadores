@@ -20,6 +20,7 @@ public:
         int endExecution;
 
         Process(int chegada, int execucao);
+        Process();
         ~Process();
 
         std::string printInfos();

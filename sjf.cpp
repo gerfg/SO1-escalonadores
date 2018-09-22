@@ -90,11 +90,3 @@ bool compareProcessSJF(Process p1, Process p2){
 bool compareProcessArrivedList(Process p1, Process p2){
     return p1.tempoDeExecucao < p2.tempoDeExecucao;
 }
-
-void showProcessList(std::vector<Process> prc, std::string name) {
-    std::cout << name << std::endl;
-    for(int i = 0; i < prc.size(); i++) {
-        std::cout << prc[i].printProcess() << '\n';
-    }
-    std::cout << std::endl;
-}

@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) build/esc",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
-            "args": [],
+            "program": "${workspaceFolder}/build/esc",
+            "args": ["../instances/inst01"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -21,6 +21,8 @@ fcfs.h
 /home/geraldo/Documents/SO1-escalonadores/fcfs.h
 sjf.h
 /home/geraldo/Documents/SO1-escalonadores/sjf.h
+rr.h
+/home/geraldo/Documents/SO1-escalonadores/rr.h
 util.h
 /home/geraldo/Documents/SO1-escalonadores/util.h
 
@@ -32,6 +34,18 @@ string
 vector
 -
 fstream
+-
+
+/home/geraldo/Documents/SO1-escalonadores/rr.h
+process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
+util.h
+/home/geraldo/Documents/SO1-escalonadores/util.h
+queue
+-
+vector
+-
+algorithm
 -
 
 /home/geraldo/Documents/SO1-escalonadores/sjf.h

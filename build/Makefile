@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/geraldo/Documents/SO1-escalonadores/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -148,6 +148,19 @@ SJF: cmake_check_build_system
 SJF/fast:
 	$(MAKE) -f CMakeFiles/SJF.dir/build.make CMakeFiles/SJF.dir/build
 .PHONY : SJF/fast
+
+#=============================================================================
+# Target rules for targets named RR
+
+# Build rule for target.
+RR: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RR
+.PHONY : RR
+
+# fast build rule for target.
+RR/fast:
+	$(MAKE) -f CMakeFiles/RR.dir/build.make CMakeFiles/RR.dir/build
+.PHONY : RR/fast
 
 #=============================================================================
 # Target rules for targets named util
@@ -256,6 +269,33 @@ process.cpp.s:
 	$(MAKE) -f CMakeFiles/Process.dir/build.make CMakeFiles/Process.dir/process.cpp.s
 .PHONY : process.cpp.s
 
+rr.o: rr.cpp.o
+
+.PHONY : rr.o
+
+# target to build an object file
+rr.cpp.o:
+	$(MAKE) -f CMakeFiles/RR.dir/build.make CMakeFiles/RR.dir/rr.cpp.o
+.PHONY : rr.cpp.o
+
+rr.i: rr.cpp.i
+
+.PHONY : rr.i
+
+# target to preprocess a source file
+rr.cpp.i:
+	$(MAKE) -f CMakeFiles/RR.dir/build.make CMakeFiles/RR.dir/rr.cpp.i
+.PHONY : rr.cpp.i
+
+rr.s: rr.cpp.s
+
+.PHONY : rr.s
+
+# target to generate assembly for a file
+rr.cpp.s:
+	$(MAKE) -f CMakeFiles/RR.dir/build.make CMakeFiles/RR.dir/rr.cpp.s
+.PHONY : rr.cpp.s
+
 sjf.o: sjf.cpp.o
 
 .PHONY : sjf.o
@@ -316,13 +356,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... FCFS"
 	@echo "... rebuild_cache"
 	@echo "... Process"
 	@echo "... SJF"
+	@echo "... RR"
 	@echo "... util"
 	@echo "... esc"
-	@echo "... edit_cache"
 	@echo "... fcfs.o"
 	@echo "... fcfs.i"
 	@echo "... fcfs.s"
@@ -332,6 +373,9 @@ help:
 	@echo "... process.o"
 	@echo "... process.i"
 	@echo "... process.s"
+	@echo "... rr.o"
+	@echo "... rr.i"
+	@echo "... rr.s"
 	@echo "... sjf.o"
 	@echo "... sjf.i"
 	@echo "... sjf.s"

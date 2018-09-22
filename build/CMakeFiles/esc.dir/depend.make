@@ -4,6 +4,7 @@
 CMakeFiles/esc.dir/main.cpp.o: ../fcfs.h
 CMakeFiles/esc.dir/main.cpp.o: ../main.cpp
 CMakeFiles/esc.dir/main.cpp.o: ../process.h
+CMakeFiles/esc.dir/main.cpp.o: ../rr.h
 CMakeFiles/esc.dir/main.cpp.o: ../sjf.h
 CMakeFiles/esc.dir/main.cpp.o: ../util.h
 

@@ -27,18 +27,6 @@ FCFS::FCFS(std::vector<Process> processList){
             executionList[i].endExecution = executionList[i].startExecution+executionList[i].tempoDeExecucao;
         }
     }
-    
-    // std::cout << "Process List" << std::endl;
-    // for(int i = 0; i < processList.size(); i++) {
-    //     std::cout << processList[i].printProcess() << '\n';
-    // }
-    // std::cout << std::endl;
-
-    std::cout << "Execution List" << std::endl;
-    for(int i = 0; i < executionList.size(); i++) {
-        std::cout << executionList[i].printProcess() << '\n';
-    }
-    std::cout << std::endl;
 }
 
 void FCFS::calcTimes(){

@@ -188,6 +188,9 @@ FCFS_LIB_DEPENDS:STATIC=
 Process_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
+RR_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 SJF_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake

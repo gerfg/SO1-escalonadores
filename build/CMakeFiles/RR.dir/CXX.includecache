@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/geraldo/Documents/SO1-escalonadores/process.h
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+
+/home/geraldo/Documents/SO1-escalonadores/rr.cpp
+rr.h
+/home/geraldo/Documents/SO1-escalonadores/rr.h
+
+/home/geraldo/Documents/SO1-escalonadores/rr.h
+process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
+util.h
+/home/geraldo/Documents/SO1-escalonadores/util.h
+queue
+-
+vector
+-
+algorithm
+-
+
+/home/geraldo/Documents/SO1-escalonadores/util.h
+vector
+-
+fstream
+-
+process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
+

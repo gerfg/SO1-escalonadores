@@ -19,3 +19,11 @@ std::vector<Process> readInstance(std::string file) {
 
     return prcs;
 }
+
+void showProcesses(std::vector<Process> prc, std::string name) {
+    std::cout << name << std::endl;
+    for(int i = 0; i < prc.size(); i++) {
+        std::cout << prc[i].printProcess() << '\n';
+    }
+    std::cout << std::endl;
+}

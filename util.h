@@ -7,4 +7,6 @@
 
 std::vector<Process> readInstance(std::string file);
 
+void showProcesses(std::vector<Process> prc, std::string name);
+
 #endif

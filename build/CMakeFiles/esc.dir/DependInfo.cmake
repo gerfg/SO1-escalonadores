@@ -17,6 +17,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir/DependInfo.cmake"
   "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir/DependInfo.cmake"
   "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/SJF.dir/DependInfo.cmake"
+  "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/RR.dir/DependInfo.cmake"
   "/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir/DependInfo.cmake"
   )
 
