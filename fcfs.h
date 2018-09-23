@@ -17,6 +17,7 @@ public:
     void printExitFCFS();
 };
 
+void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList);
 bool compareProcessFCFS(Process p1, Process p2);
 
 #endif

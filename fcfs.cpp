@@ -5,26 +5,32 @@ FCFS::FCFS(std::vector<Process> processList){
     retornoMedio = 0;
     esperaMedia = 0;
     
+    // ordenacao dos processos por ordem de chegada
     std::sort(processList.begin(), processList.end(), compareProcessFCFS);
     
+    // primeiro elemento adicionado e seus respectivos tempos atualizados
     executionList.push_back(processList[0]);
     processList.erase(processList.begin());
     
     executionList[0].startExecution = executionList[0].tempoDeChegada;
     executionList[0].endExecution = executionList[0].tempoDeChegada + executionList[0].tempoDeExecucao;
 
-    int i;
-    while(processList.size() != 0){
-        executionList.push_back(processList[0]);
-        processList.erase(processList.begin());
+    createExecutionList(&executionList, &processList);
+}
+
+void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList) {
+    int iterator;
+    while((*processList).size() != 0){
+        (*executionList).push_back((*processList)[0]);
+        (*processList).erase((*processList).begin());
         
-        i = executionList.size()-1;
-        if (executionList[i-1].endExecution < executionList[i].tempoDeChegada) {
-            executionList[i].startExecution = executionList[i].tempoDeChegada;
-            executionList[i].endExecution = executionList[i].startExecution + executionList[i].tempoDeExecucao;
+        iterator = (*executionList).size()-1;
+        if ((*executionList)[iterator-1].endExecution < (*executionList)[iterator].tempoDeChegada) {
+            (*executionList)[iterator].startExecution = (*executionList)[iterator].tempoDeChegada;
+            (*executionList)[iterator].endExecution = (*executionList)[iterator].startExecution + (*executionList)[iterator].tempoDeExecucao;
         } else {
-            executionList[i].startExecution = executionList[i-1].endExecution;
-            executionList[i].endExecution = executionList[i].startExecution+executionList[i].tempoDeExecucao;
+            (*executionList)[iterator].startExecution = (*executionList)[iterator-1].endExecution;
+            (*executionList)[iterator].endExecution = (*executionList)[iterator].startExecution+(*executionList)[iterator].tempoDeExecucao;
         }
     }
 }

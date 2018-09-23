@@ -18,11 +18,11 @@ int main(int argc, char const *argv[]) {
         // fcfs.calcTimes();
         // fcfs.printExitFCFS();
 
-        // SJF sjf(process);
-        // sjf.calcTimes();
-        // sjf.printExitSJF();
+        SJF sjf(process);
+        sjf.calcTimes();
+        sjf.printExitSJF();
 
-        RR rr(process, 2);
+        // RR rr(process, 2);
     }
     
     

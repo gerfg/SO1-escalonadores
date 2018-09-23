@@ -9,40 +9,7 @@ RR::RR(std::vector<Process> processList, int quantum):quantum{quantum}{
 
     createExecutionList(&executionList, &processList, quantum);
     
-    showProcesses(executionList, "ExecutionList");
-}
-
-bool compareProcessRR(Process p1, Process p2){
-    if (p1.tempoDeChegada == p2.tempoDeChegada) {
-        return p1.tempoDeExecucao < p2.tempoDeExecucao;
-    } else {
-        return p1.tempoDeChegada < p2.tempoDeChegada;
-    }
-}
-
-void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int lastExecutedTime){
-    int i = 0;
-    while( (*processList)[i].tempoDeChegada <= lastExecutedTime && i != (*processList).size()){
-        (*ready).push((*processList)[i]);
-        i++;
-    }
-    (*processList).erase((*processList).begin(), (*processList).begin()+i);
-}
-
-void updateLastProcessInExecutionList(std::vector<Process> *executionList, int *lastExecutedTime, int quantum, bool finished) {
-    int execIter = (*executionList).size()-1;
-    if (finished) {
-        int execIter = (*executionList).size()-1;
-        (*executionList)[execIter].startExecution = *lastExecutedTime;
-        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + (*executionList)[execIter].tempoDeExecucao;
-        (*executionList)[execIter].tempoDeExecucao -= quantum;
-    } else {
-        int execIter = (*executionList).size()-1;
-        (*executionList)[execIter].startExecution = *lastExecutedTime;
-        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + quantum;
-        (*executionList)[execIter].tempoDeExecucao -= quantum;
-    }
-    *lastExecutedTime = (*executionList)[execIter].endExecution;
+    // showProcesses(executionList, "ExecutionList");
 }
 
 void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList, int quantum) {
@@ -76,5 +43,44 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
             processUnfinished = (*executionList)[(*executionList).size()-1];
             unfinished = true;
         }
+    }
+}
+
+
+void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int lastExecutedTime){
+    int i = 0;
+    while( (*processList)[i].tempoDeChegada <= lastExecutedTime && i != (*processList).size()){
+        (*ready).push((*processList)[i]);
+        i++;
+    }
+    (*processList).erase((*processList).begin(), (*processList).begin()+i);
+}
+
+void updateLastProcessInExecutionList(std::vector<Process> *executionList, int *lastExecutedTime, int quantum, bool finished) {
+    int execIter = (*executionList).size()-1;
+    if (finished) {
+        int execIter = (*executionList).size()-1;
+        (*executionList)[execIter].startExecution = *lastExecutedTime;
+        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + (*executionList)[execIter].tempoDeExecucao;
+        (*executionList)[execIter].tempoDeExecucao -= quantum;
+    } else {
+        int execIter = (*executionList).size()-1;
+        (*executionList)[execIter].startExecution = *lastExecutedTime;
+        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + quantum;
+        (*executionList)[execIter].tempoDeExecucao -= quantum;
+    }
+    *lastExecutedTime = (*executionList)[execIter].endExecution;
+}
+
+void RR::calcTimes(int processesCount){
+    std::vector<int> countExecutionProcesses (processesCount+1);
+    std::cout << countExecutionProcesses.size() << std::endl;
+}
+
+bool compareProcessRR(Process p1, Process p2){
+    if (p1.tempoDeChegada == p2.tempoDeChegada) {
+        return p1.tempoDeExecucao < p2.tempoDeExecucao;
+    } else {
+        return p1.tempoDeChegada < p2.tempoDeChegada;
     }
 }

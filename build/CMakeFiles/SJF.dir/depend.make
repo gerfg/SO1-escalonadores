@@ -4,4 +4,5 @@
 CMakeFiles/SJF.dir/sjf.cpp.o: ../process.h
 CMakeFiles/SJF.dir/sjf.cpp.o: ../sjf.cpp
 CMakeFiles/SJF.dir/sjf.cpp.o: ../sjf.h
+CMakeFiles/SJF.dir/sjf.cpp.o: ../util.h
 

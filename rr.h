@@ -14,6 +14,7 @@ public:
     float retornoMedio, respostaMedia, esperaMedia;
 
     RR(std::vector<Process> processList, int quantum);
+    void calcTimes(int processesCount);
 };
 
 bool compareProcessRR(Process p1, Process p2);

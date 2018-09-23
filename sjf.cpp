@@ -5,15 +5,12 @@ SJF::SJF(std::vector<Process> processList){
     retornoMedio = 0;
     esperaMedia = 0;
 
-    // Lista de processos que chegaram
-    std::vector<Process> arrivedProcesses;
-    
     // primeira ordenacao para adicionar o primeiro elemento na lista de execucao
     std::sort(processList.begin(), processList.end(), compareProcessSJF);
     
     /*
         primeiro elemento adicionado para usar como referencia
-        nos proximos
+        nos proximos que serao adicionados na executionList
     */
     executionList.push_back(processList[0]);
     processList.erase(processList.begin());
@@ -21,37 +18,51 @@ SJF::SJF(std::vector<Process> processList){
     executionList[0].startExecution = executionList[0].tempoDeChegada;
     executionList[0].endExecution = executionList[0].startExecution + executionList[0].tempoDeExecucao;
 
-    int i, lastExecutedTime = executionList[0].endExecution, execIter;
-    while(processList.size() != 0 || arrivedProcesses.size() != 0){
+    // -----------------------------------------------------------------------------
 
-        i = 0;
-        while(processList[i].tempoDeChegada <= lastExecutedTime && i != processList.size()){
-            arrivedProcesses.push_back(processList[i]);
-            i++;
-        }
-        processList.erase(processList.begin(), processList.begin()+i);
+    createExecutionList(&executionList, &processList);
+}
 
-        std::sort(arrivedProcesses.begin(), arrivedProcesses.end(), compareProcessArrivedList);
+void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList) {
+    int lastExecutedTime = (*executionList)[0].endExecution;
+    std::vector<Process> arrivedProcesses;
 
-        executionList.push_back(arrivedProcesses[0]);
+    while((*processList).size() != 0 || arrivedProcesses.size() != 0){
+
+        // Atualiza a lista de processos com os processos que chegaram
+        getArrivedProcesses(processList, &arrivedProcesses, lastExecutedTime);
+
+        // executa o processo com menor tempo de execucao
+        (*executionList).push_back(arrivedProcesses[0]);
         arrivedProcesses.erase(arrivedProcesses.begin());
-        
-        execIter = executionList.size()-1;
 
-        if (executionList[execIter-1].endExecution < executionList[execIter].tempoDeChegada) {
-            executionList[execIter].startExecution = executionList[execIter].tempoDeChegada;
-            executionList[execIter].endExecution = executionList[execIter].startExecution + executionList[execIter].tempoDeExecucao;
-        } else {
-            executionList[execIter].startExecution = executionList[execIter-1].endExecution;
-            executionList[execIter].endExecution = executionList[execIter].startExecution+executionList[execIter].tempoDeExecucao;
-        }
-        
-        lastExecutedTime = executionList[execIter].endExecution;
+        // atualiza o tempo do ultimo processo adicionado
+        updateProcessTime(executionList, &lastExecutedTime);
     }
-    
-    showProcessList(processList, "ProcessList:");
-    showProcessList(executionList, "ExecutionList");
-    showProcessList(arrivedProcesses, "ArrivedProcesses");
+}
+
+void getArrivedProcesses(std::vector<Process> *processList, std::vector<Process> *arrivedProcesses, int lastExecutedTime) {
+    int i = 0;
+    while((*processList)[i].tempoDeChegada <= lastExecutedTime && i != (*processList).size()){
+        (*arrivedProcesses).push_back((*processList)[i]);
+        i++;
+    }
+    (*processList).erase((*processList).begin(), (*processList).begin()+i);
+    std::sort((*arrivedProcesses).begin(), (*arrivedProcesses).end(), compareProcessArrivedList);
+}
+
+void updateProcessTime(std::vector<Process> *executionList, int *lastExecutedTime){
+    int execIter = (*executionList).size()-1;
+
+    if ((*executionList)[execIter-1].endExecution < (*executionList)[execIter].tempoDeChegada) {
+        (*executionList)[execIter].startExecution = (*executionList)[execIter].tempoDeChegada;
+        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + (*executionList)[execIter].tempoDeExecucao;
+    } else {
+        (*executionList)[execIter].startExecution = (*executionList)[execIter-1].endExecution;
+        (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution+(*executionList)[execIter].tempoDeExecucao;
+    }
+
+    *lastExecutedTime = (*executionList)[execIter].endExecution;
 }
 
 void SJF::calcTimes(){
