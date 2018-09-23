@@ -73,8 +73,32 @@ void updateLastProcessInExecutionList(std::vector<Process> *executionList, int *
 }
 
 void RR::calcTimes(int processesCount){
-    std::vector<int> countExecutionProcesses (processesCount+1);
-    std::cout << countExecutionProcesses.size() << std::endl;
+    std::vector< std::vector<int> > executionCount;
+    executionCount.resize(processesCount+1);
+
+    for(int i = 0; i < executionList.size(); i++) {
+        executionCount[executionList[i].id].push_back(i);
+    }
+    
+    int sum;
+    for(int i = 1; i <= processesCount; i++) {
+        retornoMedio += executionList[ executionCount[i][ executionCount[i].size()-1 ] ].endExecution - executionList[executionCount[i][executionCount[i].size()-1]].tempoDeChegada;
+        respostaMedia += executionList[executionCount[i][0]].startExecution - executionList[executionCount[i][0]].tempoDeChegada;
+        
+        sum = 0;
+        sum += executionList[ executionCount[i][0] ].startExecution - executionList[ executionCount[i][0] ].tempoDeChegada;
+        for(int j = 1; j < executionCount[i].size(); j++) {
+            sum += executionList[ executionCount[i][j] ].startExecution - executionList[ executionCount[i][j-1] ].endExecution;
+        }
+        esperaMedia += sum;
+    }
+    retornoMedio = (float) retornoMedio/processesCount;
+    respostaMedia = (float) respostaMedia/processesCount;
+    esperaMedia = (float) esperaMedia/processesCount;
+}
+
+void RR::printExit() {
+    std::cout << "RR " << retornoMedio << " " << respostaMedia << " " << esperaMedia << std::endl;
 }
 
 bool compareProcessRR(Process p1, Process p2){

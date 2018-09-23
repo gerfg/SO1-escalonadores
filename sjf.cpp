@@ -36,7 +36,7 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
         (*executionList).push_back(arrivedProcesses[0]);
         arrivedProcesses.erase(arrivedProcesses.begin());
 
-        // atualiza o tempo do ultimo processo adicionado
+        // atualiza o tempo do ultimo processo adicionado a lista de execucao
         updateProcessTime(executionList, &lastExecutedTime);
     }
 }
@@ -67,20 +67,15 @@ void updateProcessTime(std::vector<Process> *executionList, int *lastExecutedTim
 
 void SJF::calcTimes(){
     for(int i = 0; i < executionList.size(); i++) {
-        executionList[i].retorno = executionList[i].endExecution - executionList[i].startExecution;
+        executionList[i].retorno = executionList[i].endExecution - executionList[i].tempoDeChegada;
         executionList[i].resposta = executionList[i].startExecution - executionList[i].tempoDeChegada;
         executionList[i].espera = executionList[i].startExecution - executionList[i].tempoDeChegada;
-    }
 
-    for(int i = 0; i < executionList.size(); i++) {
-        std::cout << executionList[i].printInfos() << '\n';
-    }
-    
-    for(int i = 0; i < executionList.size(); i++) {
         retornoMedio += executionList[i].retorno;
         respostaMedia += executionList[i].resposta;
         esperaMedia += executionList[i].espera;
     }
+
     retornoMedio = (float) retornoMedio/executionList.size();
     respostaMedia = (float) respostaMedia/executionList.size();
     esperaMedia = (float) esperaMedia/executionList.size();

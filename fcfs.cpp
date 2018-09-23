@@ -15,10 +15,10 @@ FCFS::FCFS(std::vector<Process> processList){
     executionList[0].startExecution = executionList[0].tempoDeChegada;
     executionList[0].endExecution = executionList[0].tempoDeChegada + executionList[0].tempoDeExecucao;
 
-    createExecutionList(&executionList, &processList);
+    createExecutionListFCFS(&executionList, &processList);
 }
 
-void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList) {
+void createExecutionListFCFS(std::vector<Process> *executionList, std::vector<Process> *processList) {
     int iterator;
     while((*processList).size() != 0){
         (*executionList).push_back((*processList)[0]);
@@ -35,19 +35,12 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
     }
 }
 
-void FCFS::calcTimes(){
-
+void FCFS::calcTimes(int processesCount){
     for(int i = 0; i < executionList.size(); i++) {
-        executionList[i].retorno = executionList[i].endExecution - executionList[i].startExecution;
+        executionList[i].retorno = executionList[i].endExecution - executionList[i].tempoDeChegada;
         executionList[i].resposta = executionList[i].startExecution - executionList[i].tempoDeChegada;
         executionList[i].espera = executionList[i].startExecution - executionList[i].tempoDeChegada;
-    }
 
-    for(int i = 0; i < executionList.size(); i++) {
-        std::cout << executionList[i].printInfos() << '\n';
-    }
-    
-    for(int i = 0; i < executionList.size(); i++) {
         retornoMedio += executionList[i].retorno;
         respostaMedia += executionList[i].resposta;
         esperaMedia += executionList[i].espera;
@@ -55,7 +48,6 @@ void FCFS::calcTimes(){
     retornoMedio = (float) retornoMedio/executionList.size();
     respostaMedia = (float) respostaMedia/executionList.size();
     esperaMedia = (float) esperaMedia/executionList.size();
-
 }
 
 bool compareProcessFCFS(Process p1, Process p2) {

@@ -12,12 +12,12 @@ public:
     float retornoMedio, respostaMedia, esperaMedia;
 
     FCFS(std::vector<Process> processList);
-    void calcTimes();
+    void calcTimes(int processesCount);
 
     void printExitFCFS();
 };
 
-void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList);
+void createExecutionListFCFS(std::vector<Process> *executionList, std::vector<Process> *processList);
 bool compareProcessFCFS(Process p1, Process p2);
 
 #endif

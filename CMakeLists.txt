@@ -12,6 +12,6 @@ add_library(SJF sjf.h sjf.cpp)
 add_library(RR rr.h rr.cpp)
 add_library(util util.h util.cpp)
 
-add_executable(esc main.cpp)
+add_executable(escalonadores main.cpp)
 
-target_link_libraries(esc Process FCFS SJF RR util)
+target_link_libraries(escalonadores Process FCFS SJF RR util)

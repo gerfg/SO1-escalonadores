@@ -8,23 +8,24 @@ int main(int argc, char const *argv[]) {
 
     
     if (argc < 2) {
-        std::cout << "Faltando Parâmetros. \n ./[executavel] [instancia]" << std::endl;
+        std::cout << "Faltando Parâmetros. \n ./escalonadores [instancia]" << std::endl;
     } 
     else {
         std::vector<Process> process;
         process = readInstance(argv[1]);
         
-        // FCFS fcfs(process);
-        // fcfs.calcTimes();
-        // fcfs.printExitFCFS();
+        FCFS fcfs(process);
+        fcfs.calcTimes(process.size());
+        fcfs.printExitFCFS();
 
         SJF sjf(process);
         sjf.calcTimes();
         sjf.printExitSJF();
 
-        // RR rr(process, 2);
+        RR rr(process, 2);
+        rr.calcTimes(process.size());
+        rr.printExit();
     }
-    
     
     return 0;
 }

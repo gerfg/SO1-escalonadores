@@ -15,6 +15,7 @@ public:
 
     RR(std::vector<Process> processList, int quantum);
     void calcTimes(int processesCount);
+    void printExit();
 };
 
 bool compareProcessRR(Process p1, Process p2);
