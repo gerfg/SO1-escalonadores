@@ -4,4 +4,5 @@
 CMakeFiles/FCFS.dir/fcfs.cpp.o: ../fcfs.cpp
 CMakeFiles/FCFS.dir/fcfs.cpp.o: ../fcfs.h
 CMakeFiles/FCFS.dir/fcfs.cpp.o: ../process.h
+CMakeFiles/FCFS.dir/fcfs.cpp.o: ../util.h
 

@@ -19,7 +19,7 @@ public:
 };
 
 bool compareProcessRR(Process p1, Process p2);
-void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int lastExecutedTime);
+void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int *lastExecutedTime, bool unfinished);
 void updateLastProcessInExecutionList(std::vector<Process> *executionList, int *lastExecutedTime, int quantum, bool finished);
 void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList, int quantum);
 

@@ -1,8 +1,8 @@
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/edit_cache.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/FCFS.dir
+/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/rebuild_cache.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/Process.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/SJF.dir
 /home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/RR.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/util.dir
-/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/esc.dir
+/home/geraldo/Documents/SO1-escalonadores/build/CMakeFiles/escalonadores.dir

@@ -28,9 +28,9 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
     std::vector<Process> arrivedProcesses;
 
     while((*processList).size() != 0 || arrivedProcesses.size() != 0){
-
+    
         // Atualiza a lista de processos com os processos que chegaram
-        getArrivedProcesses(processList, &arrivedProcesses, lastExecutedTime);
+        getArrivedProcesses(processList, &arrivedProcesses, &lastExecutedTime);
 
         // executa o processo com menor tempo de execucao
         (*executionList).push_back(arrivedProcesses[0]);
@@ -41,12 +41,28 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
     }
 }
 
-void getArrivedProcesses(std::vector<Process> *processList, std::vector<Process> *arrivedProcesses, int lastExecutedTime) {
+void getArrivedProcesses(std::vector<Process> *processList, std::vector<Process> *arrivedProcesses, int *lastExecutedTime) {
     int i = 0;
-    while((*processList)[i].tempoDeChegada <= lastExecutedTime && i != (*processList).size()){
+    while((*processList)[i].tempoDeChegada <= *lastExecutedTime && i != (*processList).size()){
         (*arrivedProcesses).push_back((*processList)[i]);
         i++;
     }
+    
+    /*
+        trecho responsavel por tratar o problema da lista de processos recem chegados estar
+        vazia.
+        Para resolver é atualizado o valor do ultimo processo executado para o proximo que 
+        será executado.
+    */
+    if ((*arrivedProcesses).size() == 0) {
+        *lastExecutedTime = (*processList)[0].tempoDeChegada;
+        i = 0;
+        while((*processList)[i].tempoDeChegada <= *lastExecutedTime && i != (*processList).size()){
+            (*arrivedProcesses).push_back((*processList)[i]);
+            i++;
+        }
+    }
+
     (*processList).erase((*processList).begin(), (*processList).begin()+i);
     std::sort((*arrivedProcesses).begin(), (*arrivedProcesses).end(), compareProcessArrivedList);
 }

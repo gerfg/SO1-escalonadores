@@ -124,6 +124,19 @@ FCFS/fast:
 .PHONY : FCFS/fast
 
 #=============================================================================
+# Target rules for targets named util
+
+# Build rule for target.
+util: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 util
+.PHONY : util
+
+# fast build rule for target.
+util/fast:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
+.PHONY : util/fast
+
+#=============================================================================
 # Target rules for targets named Process
 
 # Build rule for target.
@@ -163,30 +176,17 @@ RR/fast:
 .PHONY : RR/fast
 
 #=============================================================================
-# Target rules for targets named util
+# Target rules for targets named escalonadores
 
 # Build rule for target.
-util: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 util
-.PHONY : util
+escalonadores: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 escalonadores
+.PHONY : escalonadores
 
 # fast build rule for target.
-util/fast:
-	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
-.PHONY : util/fast
-
-#=============================================================================
-# Target rules for targets named esc
-
-# Build rule for target.
-esc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 esc
-.PHONY : esc
-
-# fast build rule for target.
-esc/fast:
-	$(MAKE) -f CMakeFiles/esc.dir/build.make CMakeFiles/esc.dir/build
-.PHONY : esc/fast
+escalonadores/fast:
+	$(MAKE) -f CMakeFiles/escalonadores.dir/build.make CMakeFiles/escalonadores.dir/build
+.PHONY : escalonadores/fast
 
 fcfs.o: fcfs.cpp.o
 
@@ -221,7 +221,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/esc.dir/build.make CMakeFiles/esc.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/escalonadores.dir/build.make CMakeFiles/escalonadores.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -230,7 +230,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/esc.dir/build.make CMakeFiles/esc.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/escalonadores.dir/build.make CMakeFiles/escalonadores.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -239,7 +239,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/esc.dir/build.make CMakeFiles/esc.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/escalonadores.dir/build.make CMakeFiles/escalonadores.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 process.o: process.cpp.o
@@ -358,12 +358,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... FCFS"
+	@echo "... util"
 	@echo "... rebuild_cache"
 	@echo "... Process"
 	@echo "... SJF"
 	@echo "... RR"
-	@echo "... util"
-	@echo "... esc"
+	@echo "... escalonadores"
 	@echo "... fcfs.o"
 	@echo "... fcfs.i"
 	@echo "... fcfs.s"

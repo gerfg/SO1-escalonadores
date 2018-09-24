@@ -17,6 +17,8 @@ algorithm
 -
 process.h
 /home/geraldo/Documents/SO1-escalonadores/process.h
+util.h
+/home/geraldo/Documents/SO1-escalonadores/util.h
 
 /home/geraldo/Documents/SO1-escalonadores/process.h
 iostream
@@ -27,4 +29,12 @@ vector
 -
 fstream
 -
+
+/home/geraldo/Documents/SO1-escalonadores/util.h
+vector
+-
+fstream
+-
+process.h
+/home/geraldo/Documents/SO1-escalonadores/process.h
 

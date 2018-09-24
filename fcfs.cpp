@@ -20,7 +20,7 @@ FCFS::FCFS(std::vector<Process> processList){
 
 void createExecutionListFCFS(std::vector<Process> *executionList, std::vector<Process> *processList) {
     int iterator;
-    while((*processList).size() != 0){
+    while((*processList).size() != 0){  
         (*executionList).push_back((*processList)[0]);
         (*processList).erase((*processList).begin());
         

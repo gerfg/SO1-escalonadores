@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/escalonadores.dir/main.cpp.o  -o escalonadores libProcess.a libFCFS.a libSJF.a libRR.a libutil.a 

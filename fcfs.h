@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include "process.h"
+#include "util.h"
 
 class FCFS {
 public:

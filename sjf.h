@@ -18,7 +18,7 @@ public:
 };
 
 void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList);
-void getArrivedProcesses(std::vector<Process> *processList, std::vector<Process> *arrivedProcesses, int lastExecutedTime);
+void getArrivedProcesses(std::vector<Process> *processList, std::vector<Process> *arrivedProcesses, int *lastExecutedTime);
 void updateProcessTime(std::vector<Process> *executionList, int *lastExecutedTime);
 bool compareProcessSJF(Process p1, Process p2);
 bool compareProcessArrivedList(Process p1, Process p2);

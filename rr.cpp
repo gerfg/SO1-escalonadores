@@ -14,19 +14,20 @@ RR::RR(std::vector<Process> processList, int quantum):quantum{quantum}{
 
 void createExecutionList(std::vector<Process> *executionList, std::vector<Process> *processList, int quantum) {
     std::queue<Process> ready;
-    int timeOfLastExecutedProcess = (*processList)[0].startExecution;
+    int timeOfLastExecutedProcess = (*processList)[0].tempoDeChegada;
     Process processUnfinished;
 
     bool unfinished = false;
 
-    while((*processList).size() != 0 || ready.size() != 0 || unfinished){
-
-        getArrivedProcesses(processList, &ready, timeOfLastExecutedProcess);
-
+    while((*processList).size() != 0 || ready.size() != 0 || unfinished) {
+        getArrivedProcesses(processList, &ready, &timeOfLastExecutedProcess, unfinished);
         if (unfinished) {
             ready.push(processUnfinished);
             unfinished = false;
         }
+
+        // showProcesses(*executionList, "ExecutionList");
+        // showProcesses(*processList, "ProcessList");
 
         if (ready.front().tempoDeExecucao <= quantum) {
             (*executionList).push_back(ready.front());
@@ -44,15 +45,33 @@ void createExecutionList(std::vector<Process> *executionList, std::vector<Proces
             unfinished = true;
         }
     }
+    showProcesses(*executionList, "ExecutionList");
 }
 
 
-void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int lastExecutedTime){
+void getArrivedProcesses(std::vector<Process> *processList, std::queue<Process> *ready, int *lastExecutedTime, bool unfinished){
     int i = 0;
-    while( (*processList)[i].tempoDeChegada <= lastExecutedTime && i != (*processList).size()){
+    while( (*processList)[i].tempoDeChegada <= *lastExecutedTime && i != (*processList).size()){
         (*ready).push((*processList)[i]);
         i++;
     }
+
+    /*
+        trecho responsavel por tratar o problema da lista de processos recem chegados estar
+        vazia.
+        Para resolver é atualizado o valor do ultimo processo executado para o proximo que 
+        será executado.
+    */
+    
+    if ((*ready).size() == 0 && !unfinished) {
+        *lastExecutedTime = (*processList)[0].tempoDeChegada;
+        i = 0;
+        while( (*processList)[i].tempoDeChegada <= *lastExecutedTime && i != (*processList).size()){
+            (*ready).push((*processList)[i]);
+            i++;
+        }
+    }
+
     (*processList).erase((*processList).begin(), (*processList).begin()+i);
 }
 
@@ -62,7 +81,7 @@ void updateLastProcessInExecutionList(std::vector<Process> *executionList, int *
         int execIter = (*executionList).size()-1;
         (*executionList)[execIter].startExecution = *lastExecutedTime;
         (*executionList)[execIter].endExecution = (*executionList)[execIter].startExecution + (*executionList)[execIter].tempoDeExecucao;
-        (*executionList)[execIter].tempoDeExecucao -= quantum;
+        (*executionList)[execIter].tempoDeExecucao = 0;
     } else {
         int execIter = (*executionList).size()-1;
         (*executionList)[execIter].startExecution = *lastExecutedTime;
@@ -102,9 +121,5 @@ void RR::printExit() {
 }
 
 bool compareProcessRR(Process p1, Process p2){
-    if (p1.tempoDeChegada == p2.tempoDeChegada) {
-        return p1.tempoDeExecucao < p2.tempoDeExecucao;
-    } else {
-        return p1.tempoDeChegada < p2.tempoDeChegada;
-    }
+    return p1.tempoDeChegada < p2.tempoDeChegada;
 }
