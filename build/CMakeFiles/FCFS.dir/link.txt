@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFCFS.a  CMakeFiles/FCFS.dir/fcfs.cpp.o
-/usr/bin/ranlib libFCFS.a

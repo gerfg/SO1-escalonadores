@@ -1,2 +1,0 @@
-/usr/bin/ar qc libRR.a  CMakeFiles/RR.dir/rr.cpp.o
-/usr/bin/ranlib libRR.a
