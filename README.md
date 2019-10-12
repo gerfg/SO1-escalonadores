@@ -18,7 +18,7 @@ Ao adicionarmos preempção ao FCFS, obtemos o algoritmo de revezamento, ou Roun
 ### Build e Execução
 
 ``` shell
-$ cd build/
+$ mkdir build/ && cd build/
 $ cmake ../ && make
 $ ./escalonadores [instancia]
 ```
